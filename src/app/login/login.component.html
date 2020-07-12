@@ -1,0 +1,26 @@
+<p>
+login works!
+</p>
+
+<form class="col s12" #userForm="ngForm">
+      <div class="row">
+        <div class="input-field col s6">
+          <input type="text" id="name" required #name="ngModel" class="validate" [(ngModel)]="user.name" name="name">
+        </div>
+
+        <br>
+
+        <div class="input-field col s12">
+          <input type="text" id="id" #id="ngModel" class="validate" [(ngModel)]="user.id" name="id">
+
+        </div>
+
+      </div>
+  </form>
+
+
+  <button (click)="UserChange()" [disabled]="!userForm.form.valid" routerLink="/list">
+    Save
+  </button>
+  <button class="waves-effect waves-light btn-large" routerLink="/list">Back to list</button>
+
